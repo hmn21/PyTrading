@@ -15,8 +15,8 @@ class TestResizableArray(unittest.TestCase):
         self.assertEqual(self.array._resize_factor, 1.5)
 
     def test_append(self):
-        self.array.append(1)
-        self.array.append(2)
+        self.array.append(np.int32(1))
+        self.array.append(np.int32(2))
         self.assertEqual(len(self.array), 2)
         self.assertEqual(self.array[0], 1)
         self.assertEqual(self.array[1], 2)
@@ -58,10 +58,11 @@ class TestResizableArray(unittest.TestCase):
     def test_delitem(self):
         self.array.append(1)
         self.array.append(2)
-        self.array.delete(0)
-        self.assertEqual(self.array[0], 2)
+        self.array.append(3)
+        self.array.delete(1)
+        self.assertEqual(self.array[1], 3)
         with self.assertRaises(IndexError):
-            _ = self.array[1]
+            _ = self.array[2]
 
     def test_iter(self):
         elements = [1, 2, 3]
