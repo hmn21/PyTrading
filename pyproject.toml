@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pytrading"
+version = "0.1.0"
+description = ""
+authors = ["hmn21 <hmn212008@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+numpy = ">=1.26"
+lmdb = ">=1.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
