@@ -1,16 +1,12 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from datetime import datetime
-import hashlib
-import hmac
-from pathlib import Path
-from Crypto.PublicKey import RSA, ECC
-from Crypto.Signature import pkcs1_15, eddsa
-from Crypto.Hash import SHA256
+
 import aiohttp
 import requests
+from Crypto.PublicKey import RSA, ECC
 
 from pytrading.connectivity.http import AsyncClient, Client, BaseClient
+
 
 class TestBaseClient(unittest.TestCase):
     def setUp(self):
@@ -84,6 +80,7 @@ class TestBaseClient(unittest.TestCase):
         self.assertIn("data", request_kwargs)
         self.assertEqual(request_kwargs["data"], [("test", "data")])
 
+
 class TestClient(unittest.TestCase):
     def setUp(self):
         self.client = Client(
@@ -140,6 +137,7 @@ class TestClient(unittest.TestCase):
         with self.assertRaises(Exception):
             self.client._request("get", "test_uri", False)
 
+
 class TestAsyncClient(unittest.TestCase):
     def setUp(self):
         self.client = AsyncClient(
@@ -195,6 +193,7 @@ class TestAsyncClient(unittest.TestCase):
 
         with self.assertRaises(Exception):
             await self.client._request("get", "test_uri", False)
+
 
 if __name__ == '__main__':
     unittest.main()
