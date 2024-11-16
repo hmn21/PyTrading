@@ -5,7 +5,7 @@ import pytest
 
 from pytrading.connectivity.http import AsyncClient
 from pytrading.connectivity.websocket import ReconnectingWebsocket, KeepAliveWebsocket, \
-    WebsocketManager, UnableToConnect, WSListenerState  # Adjust the import according to your module structure
+    WebsocketManager, UnableToConnect, WSListenerState
 
 
 @pytest.fixture
