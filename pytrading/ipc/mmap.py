@@ -57,8 +57,8 @@ class MMapRecord:
 
     def __init__(self, mmap_file: str, offset: int, size: int, mode: MMapMode = MMapMode.READ):
         if mode == MMapMode.READ:
-            self.mm = MMapReadFileRegistry[mmap_file]
+            self.mf = MMapReadFileRegistry[mmap_file]
         else:
-            self.mm = MMapWriteFileRegistry[mmap_file]
+            self.mf = MMapWriteFileRegistry[mmap_file]
         self.offset = offset
         self.size = size
