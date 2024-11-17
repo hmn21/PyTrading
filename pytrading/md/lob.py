@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from operator import itemgetter
 from typing import List, Tuple
 
 import numpy as np
@@ -48,6 +48,8 @@ class LOB:
         self.bids.resize(len(arr))
         self.bid_volumes.clear()
         self.bid_volumes.resize(len(arr))
+        # top bid put at end, ascending order
+        arr.sort(key=itemgetter(0))
         bulk_append(self.bids.underlying(), self.bid_volumes.underlying(), arr)
 
     # This function updates the ask snapshot with a list of tuples
@@ -56,6 +58,8 @@ class LOB:
         self.asks.resize(len(arr))
         self.ask_volumes.clear()
         self.ask_volumes.resize(len(arr))
+        # top ask put at end, descending order
+        arr.sort(key=itemgetter(0), reverse=True)
         bulk_append(self.asks.underlying(), self.ask_volumes.underlying(), arr)
 
 
