@@ -5,7 +5,7 @@ import aiohttp
 import requests
 from Crypto.PublicKey import RSA, ECC
 
-from pytrading.connectivity.http import AsyncClient, Client, BaseClient
+from pytrading.network.http import AsyncClient, Client, BaseClient
 
 
 class TestBaseClient(unittest.TestCase):

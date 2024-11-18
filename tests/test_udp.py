@@ -2,7 +2,7 @@ import asyncio
 import unittest
 from unittest.mock import patch, MagicMock
 
-from pytrading.connectivity.udp import UDPClient, UDPServer, ServerProtocol, ClientProtocol
+from pytrading.network.udp import UDPClient, UDPServer, ServerProtocol, ClientProtocol
 
 
 class TestUDPClientServer(unittest.TestCase):

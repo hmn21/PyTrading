@@ -3,8 +3,8 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from pytrading.connectivity.http import AsyncClient
-from pytrading.connectivity.websocket import ReconnectingWebsocket, KeepAliveWebsocket, \
+from pytrading.network.http import AsyncClient
+from pytrading.network.websocket import ReconnectingWebsocket, KeepAliveWebsocket, \
     WebsocketManager, UnableToConnect, WSListenerState
 
 

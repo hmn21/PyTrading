@@ -11,7 +11,7 @@ from typing import Optional
 import websockets as ws
 from websockets.exceptions import ConnectionClosedError
 
-from pytrading.connectivity.http import AsyncClient
+from pytrading.network.http import AsyncClient
 
 KEEPALIVE_TIMEOUT = 5 * 60  # 5 minutes
 

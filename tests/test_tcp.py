@@ -2,7 +2,7 @@ import asyncio
 import unittest
 from unittest.mock import patch
 
-from pytrading.connectivity.tcp import TCPServer, TCPClient, ServerProtocol, \
+from pytrading.network.tcp import TCPServer, TCPClient, ServerProtocol, \
     ClientProtocol
 
 
